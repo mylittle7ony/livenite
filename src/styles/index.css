@@ -167,3 +167,15 @@
     font-size: 1.2rem;
     font-weight: 700;
   }
+
+  body > div > div.navbar-div > div > ul > li:nth-child(2) > a{
+    font-size: 42px;
+  }
+
+  .profile-div{
+    background-color: white;
+    border-radius: 20px;
+    margin: 100px;
+    padding: 20px;
+    height: 300px;
+  }
