@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <title>Livenite</title>
+  <link rel="icon" type="image/x-icon" href="src/assets/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="title" content="Livenite">
+  <meta name="description" content="Livenite">
+
+  <!-- Jquery -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+    integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <!-- Boxicons CSS -->
+  <link
+    href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font-Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+
+  <!-- Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./src/styles/index.css" />
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+  <body>
+    <div class="main-section">
+          <div class="header-section">
+            <div class="logo-holder" style="float: left;">
+                <img src="./src/assets/logo-black.png" alt="logo" style="width: 180px; margin:24px; margin-left:110px;">
+            </div>
+            <div style="float:right; border-radius: 10px; border: 2px solid black; padding: 16px; font-size: 21px; margin: 24px;
+            margin-right: 70px;padding-right:20px; padding-left:20px ;">
+                <span class="github-link"><i class='bx bxl-github'></i><a href="https://github.com/karanchoudhxry/livenite" target="_blank" style=" text-decoration: none; color: black; padding: 10px;">Contribute</a> </span>
+            </div>
+        </div>
+        <div id="Home" class="tab" style="padding-top: 120px;">
+            <div>This is the home area!</div>
+        </div>
+
+        <div id="People" class="tab" style="display: none; padding-top: 40px;">
+            <ul id="user-list"></ul>
+        </div>
+
+        <div id="Profile" class="tab profile-tab" style="display:none; padding-top: 120px;">
+            <div class="profile-div">
+              This is the Profile area.
+            </div>
+        </div>
+
+        <div id="Search" class="tab" style="display: none; padding-top: 120px;">
+            <div>Search for concerts here!</div>
+        </div>
+    </div>
+      <div class="navbar-div">
+        <div class="navbar">
+          <ul>
+            <li class="active">
+              <a href="#" class="tablink" onclick="openTab(event,'Home')">
+                <i class="bx bx-home icon"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="tablink" onclick="openTab(event,'People')">
+                <i class="bx bx-group"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="tablink" onclick="openTab(event,'Search')">
+                <i class="bx bx-search-alt-2 icon"></i>
+              </a>
+            </li>
+             <li>
+                  <a href="#" class="tablink" onclick="openTab(event,'Profile')">
+                      <i class='bx bx-user'></i>                    
+                  </a>
+             </li>
+          </ul>
+        </div>
+      </div>
+
+    <!-- Firebase Config -->
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDCvgQSgXJq5fWDnK-TOMhcm2lTDBJMjiU",
+        authDomain: "livenite-4580a.firebaseapp.com",
+        projectId: "livenite-4580a",
+        storageBucket: "livenite-4580a.appspot.com",
+        messagingSenderId: "253526491883",
+        appId: "1:253526491883:web:dbc4153026ebf49a5eb4ae"
+      };
+    
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
+    </script>
+    <script src="./src/scripts/app.js"></script>
+  </body>
+</html>
